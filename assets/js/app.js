@@ -11,13 +11,10 @@ $.ajax({
 
         $('#ville').keydown(function (e) {
             if(e.keyCode == 13) {
-              var $ville = $(this);
-              
-
-              
+              var $ville = $(this);              
               $.vicopo($ville.val(), function (input, cities) {
                 if(input == $ville.val() && cities[0]) {
-                  $ville.val(cities[0].city).vicopoTarges().vicopoClean();
+                  $ville.val(cities[0].city).vicopoTargets().vicopoClean();
                 }
               });
               e.preventDefault();
@@ -48,7 +45,7 @@ function carte (res){
         zoom: 8
     });
 
-     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+     L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map); 
     
@@ -69,7 +66,7 @@ $('#selec').click(function(){
     $('#map').remove();
 
     $.ajax({
-        url: 'http://api.openweathermap.org/data/2.5/weather?q='+ nom.val() +',fr&appid=2304ca0a4c5b96eca86deb93757adbfa',
+        url: 'https://api.openweathermap.org/data/2.5/weather?q='+ nom.val() +',fr&appid=2304ca0a4c5b96eca86deb93757adbfa',
         type: 'GET',
         dataType: 'json',
     })
