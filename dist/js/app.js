@@ -1,0 +1,1 @@
+$.ajax({url:"http://api.openweathermap.org/data/2.5/weather?q=Cahors,fr&appid=2304ca0a4c5b96eca86deb93757adbfa",type:"GET",dataType:"json"}).done(function(a){contact(a)}).fail(function(a){console.log(a)}).always(function(){console.log("complete")});
