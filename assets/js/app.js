@@ -29,8 +29,6 @@ $.ajax({
 
     })
     .fail(function(err){
-         console.log(err)
-
     })
     .always(function(){
 
