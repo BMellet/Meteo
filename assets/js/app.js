@@ -17,7 +17,7 @@ $.ajax({
               
               $.vicopo($ville.val(), function (input, cities) {
                 if(input == $ville.val() && cities[0]) {
-                  $ville.val(cities[0].city).vicopoTarges().vicopoClean();
+                  $ville.val(cities[0].city).vicopoTargets().vicopoClean();
                 }
               });
               e.preventDefault();
