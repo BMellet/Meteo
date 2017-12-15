@@ -9,14 +9,13 @@ $.ajax({
 })
     .done(function(res){
 
-        $('#ville').keydown(function (e) {
+        $('#ville').keyup(function (e) {
             if(e.keyCode == 13) {
               var $ville = $(this);
-              
-
-              
+              console.log($ville);
               $.vicopo($ville.val(), function (input, cities) {
                 if(input == $ville.val() && cities[0]) {
+                    console.log("je suis dedans");
                   $ville.val(cities[0].city).vicopoTargets().vicopoClean();
                 }
               });
@@ -46,7 +45,7 @@ function carte (res){
         zoom: 8
     });
 
-     L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map); 
     
